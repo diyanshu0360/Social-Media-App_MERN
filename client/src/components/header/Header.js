@@ -1,12 +1,16 @@
 // Nav bar
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../context/AuthContext';
 const userIcon = require('../../assets/icons/user_icon.png');
 const msgIcon = require('../../assets/icons/message_icon.png');
 const notificationIcon = require('../../assets/icons/notifications_icon.png');
 const homeicon = require('../../assets/icons/home_icon.png');
 
 const Header = () => {
+
+  const { user } = useContext(AuthContext);
+
   return (
     <div className='border flex ps-1 pe-1 justify-center h-14'>
         <div className='p-2 self-center'>
@@ -23,9 +27,11 @@ const Header = () => {
             <div className='p-1 self-center'>Timeline</div>
         </div>
         <div className='flex self-center gap-5 p-2'>
-            <img className='w-10 h-10 p-2' src={userIcon} alt="Nothing" />
             <img className='w-10 h-10 p-2' src={msgIcon} alt="Nothing" />
             <img className='w-10 h-10 p-2' src={notificationIcon} alt="Nothing" />
+            <Link to={`/profile/${user.username}`}>
+              <img className='w-10 h-10 p-2' src={user.profilePicture ? user.profilePicture : userIcon} alt="Nothing" />
+            </Link>
         </div>
     </div>
   )

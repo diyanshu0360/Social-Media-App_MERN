@@ -1,6 +1,6 @@
 import u1 from './assets/person/1.jpeg'
-import u2 from './assets/person/2.jpeg'
 import u3 from './assets/person/3.jpeg'
+import u2 from './assets/person/2.jpeg'
 import u4 from './assets/person/4.jpeg'
 import u5 from './assets/person/5.jpeg'
 import u6 from './assets/person/6.jpeg'
