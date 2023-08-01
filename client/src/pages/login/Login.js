@@ -1,6 +1,8 @@
 import React, { useContext, useRef } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { loginCall } from '../../apiCalls';
 import { AuthContext } from '../../context/AuthContext';
+
 
 const Loading = () => {
   return (
@@ -12,6 +14,7 @@ const Login = () => {
 
   const email = useRef();
   const password = useRef();
+  const navigate = useNavigate();
   const { user, isFetching, error, dispatch } = useContext(AuthContext);
 
 
@@ -33,7 +36,7 @@ const Login = () => {
         <input className='border border-slate-500 h-10 rounded-lg p-4 ms-2 me-2' ref={password} type='password' minLength="6" placeholder='Password' required />
         <button className='bg-blue-500 text-white h-10 rounded-lg ms-2 me-2' > {isFetching ? <Loading /> : "Log In"} </button>
         <p className='text-center text-blue-500 text-sm'>Forgot Password?</p>
-        <button className='bg-green-500 text-white h-10 rounded-lg ms-2 me-2' > {isFetching ? <Loading /> : "Create a New Account"} </button>
+        <button className='bg-green-500 text-white h-10 rounded-lg ms-2 me-2' onClick={() => navigate("/register")} > {isFetching ? <Loading /> : "Create a New Account"} </button>
       </form>
     </div>
   )

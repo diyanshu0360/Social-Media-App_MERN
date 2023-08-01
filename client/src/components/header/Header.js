@@ -10,6 +10,7 @@ const homeicon = require('../../assets/icons/home_icon.png');
 const Header = () => {
 
   const { user } = useContext(AuthContext);
+  const PF = process.env.NODE_IMG_FOLDER;
 
   return (
     <div className='border flex ps-1 pe-1 justify-center h-14'>
@@ -30,7 +31,7 @@ const Header = () => {
             <img className='w-10 h-10 p-2' src={msgIcon} alt="Nothing" />
             <img className='w-10 h-10 p-2' src={notificationIcon} alt="Nothing" />
             <Link to={`/profile/${user.username}`}>
-              <img className='w-10 h-10 p-2' src={user.profilePicture ? user.profilePicture : userIcon} alt="Nothing" />
+              <img className='w-10 h-10 p-2' src={user.profilePicture ? PF+user.profilePicture : userIcon} alt="Nothing" />
             </Link>
         </div>
     </div>

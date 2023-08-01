@@ -42,7 +42,7 @@ const Register = () => {
         <input className='border border-slate-500 h-10 rounded-lg p-4 ms-2 me-2' type='password' placeholder='Password' ref={password} minLength="6" required />
         <input className='border border-slate-500 h-10 rounded-lg p-4 ms-2 me-2' type='password' placeholder='Confirm Password' ref={conpassword} minLength="6" required />
         <button type='submit' className='bg-blue-500 text-white h-10 rounded-lg ms-2 me-2'> Sign Up </button>
-        <button className='bg-green-500 text-white h-10 rounded-lg ms-2 me-2'> Log into Account </button>
+        <button className='bg-green-500 text-white h-10 rounded-lg ms-2 me-2' onClick={() => navigate("/login")}> Log into Account </button>
       </form>
     </div>
   )
